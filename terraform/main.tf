@@ -7,10 +7,10 @@ terraform {
     }
   }
 backend "s3" {
-    bucket = "lab6-7-my-tf-state"
+    bucket = "lab67-my-tf-state"
     key = "terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "lab6-7-my-tf-lockid" 
+    dynamodb_table = "lab67-my-tf-lockid" 
 
   }
 }
@@ -60,8 +60,8 @@ resource "aws_instance" "web_instance" {
   sudo groupadd docker
   sudo usermod -aG docker $USER
   newgrp docker
-  docker pull  ghto007/aws:latest
-  docker run -it ghto007/aws:latest
+  docker pull  dmytromdobrovolsky/aws:latest
+  docker run -it dmytromdobrovolsky/aws:latest
 
   EOF
 
